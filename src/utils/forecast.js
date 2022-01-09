@@ -13,7 +13,9 @@ const forecast = (lat, long, callback) => {
             const current_weather = body.current
             const curTemp = current_weather["temperature"]
             const curFeel = current_weather["feelslike"]
-            callback(undefined, `${current_weather.weather_descriptions[0]}. It is currently ${curTemp} degrees out. It feels like ${curFeel} degrees out.`)
+            const curwindspd = current_weather["wind_speed"]
+            const curhumidity = current_weather['humidity']
+            callback(undefined, `${current_weather.weather_descriptions[0]}. It is currently ${curTemp} degrees out. It feels like ${curFeel} degrees out. The wind speed is ${curwindspd} and humidity is ${curhumidity}.`)
         }
     })
 }
